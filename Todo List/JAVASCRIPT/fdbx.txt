@@ -1,0 +1,49 @@
+function loadTasks() {
+  const storedTasks = localStorage.getItem('tasks');
+  if (storedTasks) {
+    const taskArray = JSON.parse(storedTasks);
+    const taskList = document.getElementById('taskList');
+
+    for (let i = 0; i < taskArray.length; i++) {
+      const task = taskArray[i];
+      const listItem = document.createElement('li');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.checked = task.completed;
+      listItem.appendChild(checkbox);
+
+      const taskTextSpan = document.createElement('span');
+      taskTextSpan.textContent = task.text;
+      listItem.appendChild(taskTextSpan);
+
+      const taskDateSpan = document.createElement('span');
+      taskDateSpan.textContent = task.date;
+      listItem.appendChild(taskDateSpan);
+
+      const editButton = document.createElement('button');
+      editButton.textContent = 'Edit';
+      editButton.onclick = function () {
+        const newText = prompt('Edit task:', task.text);
+        if (newText !== null) {
+          taskTextSpan.textContent = newText;
+          updateLocalStorage();
+        }
+      };
+      listItem.appendChild(editButton);
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.onclick = function () {
+        taskList.removeChild(listItem);
+        updateLocalStorage();
+      };
+      listItem.appendChild(deleteButton);
+
+      // Append the list item to the task list
+      taskList.appendChild(listItem);
+      
+    }
+  }
+}
+
+loadTasks(); // Load tasks when the page is loaded

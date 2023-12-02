@@ -1,0 +1,136 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#todo-container {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#taskList {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e40808;
+  padding: 8px 0;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 70%;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+button {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.cmp,
+.cp {
+  margin-left: 10px;
+}
+
+.task {
+  display: flex;
+}
+.task{
+  margin-bottom: 20px;
+}
+
+/* Styles for different task states */
+.completed-task {
+  background-color: #dff0d8; /* Bootstrap success background color */
+}
+
+.incomplete-task {
+  background-color: #f2dede; /* Bootstrap danger background color */
+}
+
+/* Styles for buttons */
+button.all {
+  background-color: #5bc0de; /* Bootstrap info button color */
+  color: #fff;
+}
+
+button.completed {
+  background-color: #5cb85c; /* Bootstrap success button color */
+  color: #fff;
+}
+
+button.incomplete {
+  background-color: #d9534f; /* Bootstrap danger button color */
+  color: #fff;
+}
+
+
+li.completed {
+  background-color: #e0f7fa; /* Set your completed task background color */
+}
+
+li.incomplete {
+  background-color: #fce4ec; /* Set your incomplete task background color */
+}
+.completed {
+  color: #888;
+  text-decoration: line-through;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  color: #333; /* Set your desired text color */
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  background-color: #f9f9f9; /* Add your desired background color */
+}
+
+li:last-child {
+  border-bottom: none;
+}
+.incomplete-task {
+  background-color: #ffcdd2; /* Set your desired color for incomplete tasks */
+}
+#errorContainer{
+  font-size: 10px;
+}
